@@ -1,6 +1,6 @@
 {
 	"name": "ryan-redux",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "redux",
 	"main": "dist/index.js",
 	"author": "mRyan",

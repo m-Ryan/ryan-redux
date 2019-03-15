@@ -17,7 +17,7 @@ yarn add --dev ryan-redux
 
 
 ### 基于 react-redux 封装的模型，简单易用
-[example](https://github.com/m-Ryan/RyanCMS/ryan-redux/example)
+[example](https://github.com/m-Ryan/tree/master/ryan-redux/example)
 
 Usage 
 

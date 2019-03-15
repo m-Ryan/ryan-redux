@@ -6,8 +6,4 @@ export default abstract class ReduxModel<S> {
 	setState(state: S) {
 		return state;
 	}
-
-	subscribe?: {
-		[key: string]: any;
-	};
 }
