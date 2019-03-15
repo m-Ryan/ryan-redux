@@ -5,7 +5,10 @@ function combindModel(reduxModels) {
     var result = {};
     var _loop_1 = function (k) {
         var model = reduxModels[k];
-        result[k] = function (state, action) {
+        if (!model.nameSpace) {
+            throw new Error('nameSpace 不能为空');
+        }
+        result[model.nameSpace] = function (state, action) {
             if (state === void 0) { state = model.state; }
             var nameSpace = action.type;
             if (nameSpace === model.nameSpace) {

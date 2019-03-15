@@ -13,7 +13,10 @@ export function combindModel(reduxModels: ReduxModels) {
 	let result = {} as { [key: string]: (state: any | undefined, action: ModelAction<any>) => any };
 	for (const k in reduxModels) {
 		const model = reduxModels[k];
-		result[k] = (state = model.state, action: ModelAction<any>) => {
+		if (!model.nameSpace) {
+			throw new Error('nameSpace 不能为空');
+		}
+		result[model.nameSpace] = (state = model.state, action: ModelAction<any>) => {
 			const nameSpace = action.type;
 			if (nameSpace === model.nameSpace) {
 				if (state === action.payload) {
@@ -21,8 +24,6 @@ export function combindModel(reduxModels: ReduxModels) {
 				}
 				state = action.payload;
 				model.state = state;
-
-				
 			}
 
 			return state;
