@@ -1,5 +1,3 @@
-import { StoreEnhancer } from 'redux';
+import { StoreEnhancer, DeepPartial } from 'redux';
 import { ReduxModels } from './combineModel';
-export default function createStore(model: ReduxModels, ...args: StoreEnhancer[]): import("redux").Store<{
-    [x: string]: any;
-}, import("redux").AnyAction>;
+export default function createStore(model: ReduxModels, preloadedState?: DeepPartial<{}>, enhancer?: StoreEnhancer<{}, {}>): import("redux").Store<{}, import("redux").AnyAction>;
