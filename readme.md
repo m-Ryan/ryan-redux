@@ -6,12 +6,12 @@ Install
 ---
 
 ```
-npm install --save-dev ryan-redux
+npm install --save ryan-redux
 
 ```
 
 ```
-yarn add --dev ryan-redux
+yarn add ryan-redux
 
 ```
 
