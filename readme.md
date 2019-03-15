@@ -17,14 +17,14 @@ yarn add --dev ryan-redux
 
 
 ### 基于 react-redux 封装的模型，简单易用
-[example](https://github.com/m-Ryan/tree/master/ryan-redux/example)
+[example](https://github.com/m-Ryan/ryan-redux/tree/master/examples)
 
 Usage 
 
 ---
 
-## 建立一个 model
-## model/books.ts
+**建立一个 model**
+**model/books.ts**
 ```js
 import { ReduxModel } from 'ryan-redux';
 
@@ -57,8 +57,8 @@ export default new Books();
 
 ```
 
-## 统一在这里导出
-## model/index.ts
+**统一在这里导出**
+**model/index.ts**
 
 ```js
 import books from './books';
@@ -66,8 +66,8 @@ import books from './books';
 export const model = { books };
 
 ```
-## 生成 store
-## store.ts
+**生成 store**
+**store.ts**
 
 ```js
 import { model } from './model';
@@ -76,8 +76,8 @@ import { createStore } from './ryan-redux';
 export const store = createStore(model);
 ```
 
-## 注入进 props
-## index.tsx
+**注入进 props**
+**index.tsx**
 
 ```js
 import React from 'react';
@@ -97,8 +97,8 @@ ReactDOM.render(
 );
 ```
 
-## 具体使用
-## App.tsx
+**具体使用**
+**App.tsx**
 
 ```js
 import React, { Component } from 'react';
