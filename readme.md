@@ -71,7 +71,7 @@ export const model = { books };
 
 ```js
 import { model } from './model';
-import { createStore } from './ryan-redux';
+import { createStore } from 'ryan-redux';
 
 export const store = createStore(model);
 ```
@@ -85,7 +85,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { store } from './store';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Provider } from './ryan-redux';
+import { Provider } from 'ryan-redux';
 
 ReactDOM.render(
 	<Provider store={store}>
