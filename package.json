@@ -1,0 +1,22 @@
+{
+	"name": "ryan-redux",
+	"version": "0.0.3",
+	"description": "redux",
+	"main": "dist/index.js",
+	"author": "mRyan",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@types/redux": "^3.6.0",
+		"react-redux": "^6.0.1",
+		"redux": "^4.0.1",
+		"typescript": "^3.3.3333"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:m-Ryan/ryan-redux.git"
+	},
+	"keywords": ["redux", "redux-model"]
+}

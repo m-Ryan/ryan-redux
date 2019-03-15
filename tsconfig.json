@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "pretty": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnusedLabels": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "outDir": "dist"
+  },
+  "include": [
+    "src/*",
+    "typings/*"
+  ],
+  "exclude": ["node_modules"]
+}
