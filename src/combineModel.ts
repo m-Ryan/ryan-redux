@@ -10,7 +10,7 @@ export interface ReduxModels {
 }
 
 export function combindModel(reduxModels: ReduxModels) {
-	let result = {} as { [key: string]: (state: any | undefined, action: ModelAction<any>) => any };
+	let result = {} as { [key: string]: <S>(state: S | undefined, action: ModelAction<any>) => S };
 	for (const k in reduxModels) {
 		const model = reduxModels[k];
 		if (!model.nameSpace) {
