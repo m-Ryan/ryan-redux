@@ -6,7 +6,7 @@ export interface Book {
 	price: number;
 }
 
-class Books extends ReduxModel<Book[]> {
+export default class Books extends ReduxModel<Book[]> {
 	nameSpace = 'books';
 
 	state: Book[] = [];
@@ -24,5 +24,3 @@ class Books extends ReduxModel<Book[]> {
 		return this.state[this.state.length - 1];
 	}
 }
-
-export default new Books();

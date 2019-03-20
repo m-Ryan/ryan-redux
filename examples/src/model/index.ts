@@ -1,3 +1,3 @@
-import books from './books';
-
-export const model = { books };
+import Books from './books';
+const booksModel = new Books();
+export { booksModel };

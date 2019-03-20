@@ -34,7 +34,7 @@ export interface Book {
 	price: number;
 }
 
-class Books extends ReduxModel<Book[]> {
+export default class Books extends ReduxModel<Book[]> {
 	nameSpace = 'books';
 
 	state: Book[] = [];
@@ -53,7 +53,6 @@ class Books extends ReduxModel<Book[]> {
 	}
 }
 
-export default new Books();
 
 ```
 
@@ -61,19 +60,21 @@ export default new Books();
 **model/index.ts**
 
 ```js
-import books from './books';
+import Books from './books';
+const booksModel = new Books();
+export { booksModel };
 
-export const model = { books };
 
 ```
 **生成 store**
 **store.ts**
 
 ```js
-import { model } from './model';
+import * as model from './model';
 import { createStore } from 'ryan-redux';
 
 export const store = createStore(model);
+
 ```
 
 **注入进 props**
@@ -104,9 +105,9 @@ ReactDOM.render(
 import React, { Component } from 'react';
 import { Table, Button } from 'antd';
 import 'antd/dist/antd.css';
-import booksModel, { Book } from './model/books';
-import { model } from './model';
+import { Book } from './model/books';
 import { connect } from 'ryan-redux';
+import { booksModel } from './model';
 
 interface Props {
 	books: Book[];
@@ -116,7 +117,7 @@ interface State {
 	countId: number;
 }
 
-@connect(({ books }: typeof model) => ({ books }))
+@connect(({ books }: { books: typeof booksModel.state }) => ({ books }))
 export default class App extends Component<Props, State> {
 	state: State = {
 		countId: 1
@@ -175,5 +176,6 @@ export default class App extends Component<Props, State> {
 		);
 	}
 }
+
 
 ```

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'antd';
 import 'antd/dist/antd.css';
-import booksModel, { Book } from './model/books';
-import { model } from './model';
+import { Book } from './model/books';
 import { connect } from 'ryan-redux';
+import { booksModel } from './model';
 
 interface Props {
 	books: Book[];
@@ -13,7 +13,7 @@ interface State {
 	countId: number;
 }
 
-@connect(({ books }: typeof model) => ({ books }))
+@connect(({ books }: { books: typeof booksModel.state }) => ({ books }))
 export default class App extends Component<Props, State> {
 	state: State = {
 		countId: 1
